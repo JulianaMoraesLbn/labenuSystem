@@ -1,0 +1,25 @@
+/* DOCENTE
+    Excluir coluna turma_id -> criei uma tabela de relacionamento docente_turma - no get fazer um join e juntar
+
+    Vou ter que dorpar todas as tabelas
+
+ESTUDANTES
+    CONSEGUI TRAZER AS INFORMACOES DO BANCO COM O QUE TEM CADASTRADO - FALTA COMPRAR COM ESSE RETORNO E CADASTRAR O QUE NÁO TEM NO BANCO
+
+
+
+    START transaction;
+    INSERT INTO hobby(id, nome) VALUES("003", "Ler livros"), ("004", "pular corda") ON DUPLICATE KEY UPDATE created_at = CURRENT_TIMESTAMP;
+    SELECT id FROM hobby WHERE nome in ("Ler livros", "pular corda");
+    COMMIT; 
+                   
+    SELECT id FROM hobby WHERE nome in (${hobbys.map(cadaHobby => `"${cadaHobby}"`)}); 
+       */   
+      
+
+
+
+    START transaction;
+    INSERT INTO hobby(id, nome) VALUES("003", "Ler livros"), ("004", "pular corda") ON DUPLICATE KEY UPDATE created_at = CURRENT_TIMESTAMP;
+    SELECT id FROM hobby WHERE nome in (${hobbys.map(cadaHobby => `"${cadaHobby}"`)}); 
+    COMMIT; 
